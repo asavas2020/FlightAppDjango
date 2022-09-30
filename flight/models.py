@@ -26,4 +26,4 @@ class Reservation(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     passanger = models.ManyToManyField(Passenger, related_name='reservations') # related_name childtan parentın modeline ulaşabilmemiz için.
     #p.reservations.all() ile hepsine ulaşabiliriz
-    flight = models.ForeignKey(Flight, on_delete=models.CASCADE)
+    flight = models.ForeignKey(Flight, on_delete=models.CASCADE, related_name = "reservation")
